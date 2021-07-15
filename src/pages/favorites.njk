@@ -1,0 +1,19 @@
+---
+title: Favorites
+layout: layouts/base.njk
+permalink: /favorites/
+eleventyNavigation:
+  key: Favorites
+  order: 3
+---
+
+<h2>Your recommendations and favorites</h2>
+
+<ul>
+  {% for fave in collections.faveCategories %}
+  <li class="mb-6 sm:text-lg">
+    <a href="{{ fave.url }}">{{ fave.data.title }}</a>
+    - {{ fave.data.description }}
+  </li>
+  {% endfor %}
+</ul>

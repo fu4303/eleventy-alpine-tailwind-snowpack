@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "../components/head.njk" %}
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="/styles/index.css" />
+    <script type="module" src="/scripts/turbolinks.js" defer></script>
+  </head>
+  <body
+    class="grid min-h-screen grid-cols-1 grid-rows-layout dark:bg-gray-800 dark:text-gray-50 max-w-6xl mx-auto {{ 'debug-screens' if env.dev }}"
+  >
+    {% include "../components/navigation.njk" %}
+    <div class="w-full px-5 my-8 sm:my-16">
+      <main class="max-w-3xl mx-auto">
+        {{ content | safe }}
+      </main>
+    </div>
+    {% include "../components/footer.njk" %}
+
+    <script type="module" src="/scripts/index.js" defer></script>
+  </body>
+</html>

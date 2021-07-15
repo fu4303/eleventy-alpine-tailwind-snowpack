@@ -1,0 +1,22 @@
+---
+title: Toys
+layout: layouts/base.njk
+description: My favorite toys
+eleventyNavigation:
+  key: Toys
+  parent: Favorites
+  order: 1
+---
+
+<h2>Favorite toys</h2>
+
+{% set faves = collections.toys %}
+
+<ul id="podcasts" class="favelist">
+  {% for fave in faves | reverse %}
+  <li class="mb-8 sm:text-lg">
+    <a href="{{ fave.data.url }}">{{ fave.data.title }}</a>
+    {{ fave.templateContent | safe }}
+  </li>
+  {% endfor %}
+</ul>

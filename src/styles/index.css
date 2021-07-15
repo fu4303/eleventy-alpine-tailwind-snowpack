@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*:focus {
+  @apply outline-none ring-2 ring-gray-800 dark:ring-gray-100 ring-offset-2 dark:ring-offset-gray-800 rounded-sm border-transparent no-underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+}
+
+h2 {
+  @apply mb-8 text-2xl sm:text-3xl;
+}
+
+h3 {
+  @apply mb-2 text-xl sm:text-2xl;
+}
+
+:is(p, li) a {
+  @apply px-px underline hover:rounded-sm hover:border-0 hover:bg-blue-500 hover:text-gray-50 dark:hover:bg-blue-600;
+}
+
+#nav a {
+  @apply inline-flex items-center pt-1 border-b text-sm font-medium hover:bg-transparent hover:text-current;
+}
+
+footer a {
+  @apply text-gray-400 hover:text-gray-500 dark:hover:text-gray-200;
+}
+
+ol#work {
+  display: table;
+}
+
+ol#work > li {
+  display: table-row;
+  height: 3.25rem;
+  margin: 1.5rem 0;
+}
+
+ol#work > li::before {
+  content: attr(seq);
+  display: table-cell;
+  @apply text-xs sm:text-sm font-mono;
+}
+
+.favelist > li > p {
+  @apply pl-6 mt-2 text-sm sm:text-base;
+}

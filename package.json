@@ -1,0 +1,84 @@
+{
+  "name": "personal-site-template-11ty-tailwind-snowpack-alpine",
+  "description": "personal site template built with eleventy, tailwind, alpinejs, and snowpack.",
+  "author": {
+    "name": "Matt Lehrer",
+    "email": "hi@mattlehrer.com"
+  },
+  "scripts": {
+    "clean": "rimraf _site",
+    "serve": "serve --no-clipboard --listen 8080 dist",
+    "dev": "NODE_ENV=development run-s clean dev:*",
+    "dev:snowpack": "snowpack dev",
+    "build": "NODE_ENV=production run-s clean build:*",
+    "build:snowpack": "snowpack build",
+    "build:sw": "workbox generateSW",
+    "lint": "run-s lint:*",
+    "lint:eslint": "eslint --ext .js,.html src/",
+    "lint:stylelint": "stylelint src/**/*.js src/**/*.html src/**/*.njk src/**/*.css",
+    "format": "run-s format:*",
+    "format:eslint": "eslint --ext .js,.html src/ --fix",
+    "format:stylelint": "stylelint src/**/*.js src/**/*.html src/**/*.njk src/**/*.css --fix",
+    "format:prettier": "prettier --write .",
+    "validate": "run-s build lint",
+    "setup": "npm install && npm run validate",
+    "benchmark": "DEBUG=Eleventy:Benchmark* eleventy"
+  },
+  "version": "1.0.0",
+  "engines": {
+    "node": "14.x.x",
+    "npm": "7.x.x"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mattlehrer/eleventy-alpine-tailwind-snowpack.git"
+  },
+  "license": "ISC",
+  "private": true,
+  "homepage": "https://eleventy-alpine-tailwind-snowpack-demo.netlify.app/",
+  "browserslist": [
+    "defaults",
+    "maintained node versions",
+    "> 5%"
+  ],
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-img": "^0.8.2",
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@snowpack/plugin-postcss": "^1.2.1",
+    "@snowpack/plugin-run-script": "^2.3.0",
+    "@tailwindcss/jit": "^0.1.4",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^10.2.5",
+    "babel-eslint": "^10.1.0",
+    "browserslist": "^4.16.3",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "serve": "^11.3.2",
+    "snowpack": "^3.1.1",
+    "snowpack-plugin-minify-html": "^0.1.1",
+    "stylelint": "^13.12.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-order": "^4.1.0",
+    "tailwindcss": "^2.0.4",
+    "tailwindcss-debug-screens": "^2.0.0",
+    "workbox-cli": "^6.1.2"
+  },
+  "dependencies": {
+    "alpinejs": "^2.8.1",
+    "turbolinks": "^5.2.0"
+  }
+}
